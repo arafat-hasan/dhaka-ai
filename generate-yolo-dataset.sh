@@ -63,7 +63,6 @@ rm "$imagesTMP"/231.jpg # Corrupted file
 rm "datasets/yolo/imagesTMP/Pias (359).jpg" # Corrupted file
 rm "datasets/yolo/imagesTMP/Pias (360).jpg" # Corrupted file
 
-cp -r datasets/yololabels/* datasets/yolo/labelsTMP/
 
 mkdir -p datasets/yolo/images/train
 mkdir -p datasets/yolo/images/val
