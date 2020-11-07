@@ -87,6 +87,7 @@ else
     name=$(basename "$filename" .txt)
     mv "$imagesTMP""$name".jpg  datasets/yolo/images/train
   done
+  cp -r datasets/yololabels/labels/* datasets/yolo/labels/
   echo "Previous train-val split used."
 fi
 
