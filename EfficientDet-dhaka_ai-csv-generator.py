@@ -67,11 +67,7 @@ def main(args=None):
                             score_threshold=score_threshold)
     model.load_weights(model_path, by_name=True)
 
-<<<<<<< HEAD
     with open('submission_files/result-{}.csv'.format(time.strftime("%Y-%m-%d_%H-%M-%S")), mode='w') as result_file:
-=======
-    with open('submission_files/result-{}.csv'.format(time.strftime("%Y-%m-%d_%H-%M-%S")), mode='w') as result_file:
->>>>>>> tensorflow-latest
         fieldnames = ['image_id', 'class', 'score', 'xmin', 'ymin', 'xmax', 'ymax', 'width', 'height']
         result_file_writer = csv.writer(result_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         result_file_writer.writerow(fieldnames)
