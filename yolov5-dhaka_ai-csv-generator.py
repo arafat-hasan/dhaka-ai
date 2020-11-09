@@ -7,12 +7,10 @@ import cv2
 
 
 def get_class_names():
-    classes = []
-    with open('datasets/ClassNames.txt') as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=' ')
-        for row in csv_reader:
-            classes.append(row[0])
-    return classes
+    with open('datasets/ClassNames.txt') as f:
+        content = f.readlines()
+    content = [x.strip() for x in content]
+    return content
 
 def get_img_size(file):
     img = cv2.imread(file)
@@ -117,5 +115,6 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
     classes = get_class_names()
+    print(classes)
     process(classes)
 
