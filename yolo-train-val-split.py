@@ -5,7 +5,7 @@ import os
 import random
 import glob
 
-train_percent = 0.91
+train_percent = 0.85
 
 
 labelfilepath = 'datasets/yolo/labelsTMP/'
