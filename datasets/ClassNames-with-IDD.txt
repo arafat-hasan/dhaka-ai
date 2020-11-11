@@ -1,0 +1,32 @@
+ambulance,ambulance
+auto rickshaw,auto rickshaw
+bicycle,bicycle
+bus,bus
+car,car
+garbagevan,garbagevan
+human hauler,human hauler
+minibus,minibus
+minivan,minivan
+motorbike,motorbike
+pickup,pickup
+army vehicle,army vehicle
+policecar,policecar
+rickshaw,rickshaw
+scooter,scooter
+suv,suv
+taxi,taxi
+three wheelers (CNG),three wheelers (CNG)
+truck,truck
+van,van
+wheelbarrow,wheelbarrow
+vehicle fallback,DELETE
+motorcycle,motorbike
+rider,DELETE
+person,DELETE
+autorickshaw,three wheelers (CNG)
+animal,DELETE
+traffic sign,DELETE
+train,DELETE
+traffic light,DELETE
+caravan,DELETE
+trailer,DELETE
