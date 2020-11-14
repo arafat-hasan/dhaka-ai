@@ -49,7 +49,7 @@ done
 
 
 
-python3 png2jpg.py $imagesTMP  # Convert all png files to jpg
+python3 png2jpg.py "$imagesTMP"  # Convert all png files to jpg
 
 
 rename JPG jpg "$imagesTMP"/*.JPG || :  # Convert uppercase file ext to lowercase

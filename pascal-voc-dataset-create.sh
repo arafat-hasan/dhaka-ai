@@ -74,7 +74,7 @@ rm "datasets/voc/Annotations/Pias (360).xml"    # Corrupted file
 rm "datasets/voc/JPEGImages/Pias (360).jpg" # Corrupted file
 
 
-if [ $2 -eq "generate" ]
+if [ $2 = "generate" ]
   then
       python3 generateimagesets.py    # Create train-test-val split in ImageSets dir  
       echo "Image Set Created"

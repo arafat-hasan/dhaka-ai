@@ -4,6 +4,7 @@ import shutil
 import os
 import random
 import glob
+from tqdm import tqdm
 
 train_percent = 0.85
 
@@ -26,7 +27,7 @@ train = random.sample(list, tr)
 txt_file_names = os.listdir(labelfilepath)
 image_file_names = os.listdir(imagefilepath)
 
-for i in list:
+for i in tqdm(list):
     image_file_name = image_file_names[i]
     txt_file_name =  os.path.splitext(image_file_name)[0] + ".txt"
     if  i in train:

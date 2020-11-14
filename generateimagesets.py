@@ -3,9 +3,10 @@
 import os
 import random
 import glob
+from tqdm import tqdm
 
-trainval_percent = 0.95
-train_percent = 0.90
+trainval_percent = 1.0
+train_percent = 0.85
 
 
 xmlfilepath = 'datasets/voc/Annotations'
@@ -24,7 +25,7 @@ ftest = open(os.path.join(txtsavepath, 'test.txt'), 'w')
 ftrain = open(os.path.join(txtsavepath, 'train.txt'), 'w')
 fval = open(os.path.join(txtsavepath, 'val.txt'), 'w')
 
-for i in list:
+for i in tqdm(list):
     name = os.path.basename(total_xml[i])[:-4]+'\n'
     if i in trainval:
         ftrainval.write(name)
