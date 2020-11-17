@@ -28,5 +28,5 @@ animal,DELETE
 traffic sign,DELETE
 train,DELETE
 traffic light,DELETE
-caravan,DELETE
+caravan,van
 trailer,DELETE
