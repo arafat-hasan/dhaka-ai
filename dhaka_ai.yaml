@@ -1,5 +1,5 @@
-train: ../dhaka-ai/datasets/yolo/images/train
-val: ../dhaka-ai/datasets/yolo/images/val
+train: ../dhaka-ai/datasets/yolotrain.txt
+val: ../dhaka-ai/datasets/yoloval.txt
 
 nc: 21
 
