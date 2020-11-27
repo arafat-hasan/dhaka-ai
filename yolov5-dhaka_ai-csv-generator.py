@@ -6,8 +6,8 @@ import time
 import cv2
 
 
-def get_class_names():
-    with open('datasets/ClassNames.txt') as f:
+def get_class_names(path):
+    with open(path) as f:
         content = f.readlines()
     content = [x.strip() for x in content]
     return content
@@ -49,7 +49,7 @@ def process(classes):
     ymin = []
     height = []
     width = []
-    for file in glob.glob(os.path.join(opt.source_dir, "*.txt")):
+    for file in glob.glob(os.path.join(opt.label_dir, "*.txt")):
         with open(file) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=' ')
             for row in csv_reader:
@@ -64,7 +64,7 @@ def process(classes):
                 box_height = float(row[5])
 
                 h, w = get_img_size(os.path.join(
-                    opt.source_dir, basename + ".jpg"))
+                    opt.image_dir, basename + ".jpg"))
                 x_center = x_center * w
                 y_center = y_center * h
                 box_width = box_width * w
@@ -94,7 +94,7 @@ def process(classes):
                 check_badbox(basename + ".jpg", h, w,
                              x_min, y_min, x_max, y_max)
 
-    with open('submission_files/arafat_yolo-result_conf-{}_IOUthr-{}_{}_ac-0.0.csv'.format(opt.conf_thres, opt.iou_thres, time.strftime("%Y-%m-%d_%H-%M-%S")), mode='w') as result_file:
+    with open('submission_files/arafat_yolo-result_conf-{}_IOUthr-{}_{}_ac-0.0_epc-0.csv'.format(opt.conf_thres, opt.iou_thres, time.strftime("%Y-%m-%d_%H-%M-%S")), mode='w') as result_file:
         fieldnames = ['image_id', 'class', 'score', 'xmin',
                       'ymin', 'xmax', 'ymax', 'width', 'height']
         result_file_writer = csv.writer(
@@ -109,14 +109,18 @@ def process(classes):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--source-dir', type=str,
-                        help='source directory to read darknet txt')
+    parser.add_argument('--image-dir', type=str,
+                        help='source directory to read test images')
+    parser.add_argument('--label-dir', type=str,
+                        help='source directory to read darknet labels')
+    parser.add_argument('--classname-file', type=str,
+                        help='class name text file path')
     parser.add_argument('--conf-thres', type=float,
                         default=0.25, help='object confidence threshold')
     parser.add_argument('--iou-thres', type=float,
                         default=0.45, help='IOU threshold for NMS')
     opt = parser.parse_args()
     print(opt)
-    classes = get_class_names()
+    classes = get_class_names(opt.classname_file)
     print(classes)
     process(classes)
