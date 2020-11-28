@@ -56,12 +56,11 @@ def process(classes):
                 basename = os.path.splitext(os.path.basename(file))[0]
                 image_id.append(basename + ".jpg")
                 classname.append(classes[int(row[0])])
-                score.append(row[1])
 
-                x_center = float(row[2])
-                y_center = float(row[3])
-                box_width = float(row[4])
-                box_height = float(row[5])
+                x_center = float(row[1])
+                y_center = float(row[2])
+                box_width = float(row[3])
+                box_height = float(row[4])
 
                 h, w = get_img_size(os.path.join(
                     opt.image_dir, basename + ".jpg"))
@@ -93,18 +92,24 @@ def process(classes):
                 width.append(w)
                 check_badbox(basename + ".jpg", h, w,
                              x_min, y_min, x_max, y_max)
+                score.append(row[5])
 
-    with open('submission_files/arafat_yolo-result_conf-{}_IOUthr-{}_{}_ac-0.0_epc-0.csv'.format(opt.conf_thres, opt.iou_thres, time.strftime("%Y-%m-%d_%H-%M-%S")), mode='w') as result_file:
+    save_path = 'submission_files/arafat_yolo-result_conf-{}_IOUthr-{}_{}_ac-0.0_epc-0.csv'.format(
+        opt.conf_thres, opt.iou_thres, time.strftime("%Y-%m-%d_%H-%M-%S"))
+    with open(save_path, mode='w') as result_file:
         fieldnames = ['image_id', 'class', 'score', 'xmin',
                       'ymin', 'xmax', 'ymax', 'width', 'height']
         result_file_writer = csv.writer(
-            result_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            result_file, delimiter=',', quotechar='"',
+            quoting=csv.QUOTE_MINIMAL)
         result_file_writer.writerow(fieldnames)
         for index in range(len(image_id)):
             result_file_writer.writerow([image_id[index], classname[index],
-                                         score[index], xmin[index], ymin[index],
-                                         xmax[index], ymax[index], height[index],
-                                         width[index]])
+                                         score[index],
+                                         xmin[index], ymin[index],
+                                         xmax[index], ymax[index],
+                                         height[index], width[index]])
+    print("stored in: ", save_path)
 
 
 if __name__ == '__main__':
