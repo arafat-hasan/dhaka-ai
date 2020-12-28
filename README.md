@@ -1,11 +1,34 @@
+# Dhaka AI
 
-## ২১ নভেম্বর, ২০২০
-আজকে পরিমার্জিত ঢাকা এআই এর ডাটাসেট ও আমাদের তোলা ১৩৫ ছবির মিলে মোট ২৯৯৯+১৩৫ টা ছবির উপর ইয়োলো ভার্সন ৫ দিয়ে ১৫ টা এপোক চালালাম। সামবিট করার পরে অ্যাকুরেসি ০.১১ এসেছে। এর আগে অপরিমার্জিত ঢাকা এআই-এর ডাটা + আমাদের ১০৭টা ছবি মিলে ২৩ এপোকের পরে অ্যাকুরেসি ০.১১৩৫ এসেছিল। ২৩ এপোকের পরে অবশ্য আরও এপোক চালিয়েছিলাম, ৩৫ এপোকে গিয়ে অ্যাকুরেসি  ৯/১০ হয়ে গিয়েছিল।। আজকে এই ১৫ এপোকের ওয়েট দিয়ে হাইপার প্যারামিটার এভলভ করতে দিলাম। হাইপারপ্যারামিটার অপটিমাজেশন নামে কিছু একটা আছে, এই কোডই সবচেয়ে ভালো হাইপার প্যারামিটার ড্রাইভে স্টোর করে দেবে। পরে এই প্যারাম দিয়ে ট্রেইন করতে হবে।
+My solution of [Dhaka Ai Traffic Detection Challenge]((https://dhaka-ai.com/).
+
+> An international AI-based Dhaka Traffic Detection Challenge funded by Elsevier would be co-organized during STI 2020
 
 
 
-ইয়োলোর মূল রেপো আল্ট্রা লাইটিকসে ডিটেক্ট.পাই ফাইলে পরিবর্তনের কারণে গত তিন চারদিনের সাবমিশন ফাইল, যেগুলা আমি আমার কোড দিয়ে জেনারেট করেছিলাম, সেগুলোতে সমস্যা ছিল। যেকারণে অ্যাকুরেসি প্রায় শূন্য আসছিল। আজকে সেটা ফিক্স করলাম। 
 
-কয়েকটা রেজাল্ট: 
-১।  train/exp2: ঢাকার পরিশীলিত ডাটা + আমাদের ডাটা + ৫৬ টি টেস্টের ডাটা। এর অ্যাকুরেসি ০.১৩, ১০ এপোক। ডিটেক্ট ফাইল: মনে নাই।
-২। train/exp1: ঢাকার পরিশীলিত ডাটা + আমাদের ডাটা + ৫৬ টি টেস্টের ডাটা + ১০০০ ইন্ডিয়ান ডাটা। এর অ্যাকুরেসি ০.১৩৩৫, ১০ এপোক। ডিটেক্ট ফাইল: মনে নাই।
+![Inference on test image](img/inference-1.jpg "Inference in test image")
+![Inference on test image](img/inference-2.jpg "Inference in test image")
+
+
+![Data Overview](YOLOv5/runs/train/exp8/labels.png "Data Overview")
+![Result](YOLOv5/runs/train/exp8/result.png "Result")
+
+
+
+`test_batch0_pred.jpg` shows test batch 0 predictions:
+![Inference on test image](YOLOv5/runs/train/exp8/test_batch0_pred.jpg "Inference in test image")
+![Inference on test image](YOLOv5/runs/train/exp8/test_batch1_pred.jpg "Inference in test image")
+
+`test_batch0_labels.jpg` shows test batch 0 labels:
+![Inference on test image](YOLOv5/runs/train/exp8/test_batch0_labels.jpg "Inference in test image")
+![Inference on test image](YOLOv5/runs/train/exp8/test_batch1_labels.jpg "Inference in test image")
+
+`train_batch0.jpg` shows train batch 0 mosaics and labels:
+![Inference on test image](YOLOv5/runs/train/exp8/train_batch0.jpg "Inference in test image")
+![Inference on test image](YOLOv5/runs/train/exp8/train_batch2.jpg "Inference in test image")
+
+
+Best Result: 0.1346 (MBSTU_Underrated)
+
+
