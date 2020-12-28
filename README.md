@@ -23,16 +23,19 @@ My solution of [Dhaka Ai Traffic Detection Challenge](https://dhaka-ai.com/).
 
 ### Validation batch predictions
 `test_batch[0-9]+_pred.jpg` shows—
+
 <img src="YOLOv5/runs/train/exp8/test_batch0_pred.jpg" alt="validation batch predictions" width="45%"/> <img src="YOLOv5/runs/train/exp8/test_batch1_pred.jpg" alt="validation batch predictions" width="45%"/>
 
 
 ### Validation batch label
 `test_batch[0-9]+_labels.jpg` shows—
+
 <img src="YOLOv5/runs/train/exp8/test_batch0_labels.jpg" alt="validation batch labels" width="45%"/> <img src="YOLOv5/runs/train/exp8/test_batch1_labels.jpg" alt="validation batch labels" width="45%"/>
 
 
 ### Train batch mosaics and labels:
 `train_batch[0-9]+.jpg` shows—
+
 <img src="YOLOv5/runs/train/exp8/train_batch0.jpg" alt="train batch mosaics and labels" width="45%"/> <img src="YOLOv5/runs/train/exp8/train_batch2.jpg" alt="train batch mosaics and labels" width="45%"/>
 
 
