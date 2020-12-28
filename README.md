@@ -12,12 +12,8 @@ My solution of [Dhaka Ai Traffic Detection Challenge](https://dhaka-ai.com/).
 
 
 
-### Train Data Overview
-![Data Overview](YOLOv5/runs/train/exp8/labels.png "Data Overview")
-
-### Train Result
-![Result](YOLOv5/runs/train/exp8/results.png "Result")
-
+### Train Data Overview & Train Result
+<img src="YOLOv5/runs/train/exp8/labels.png" alt="Train Data Overview" width="45%"/> <img src="YOLOv5/runs/train/exp8/results.png" alt="Train Result" width="45%"/>
 
 
 ### `test_batch[0-9]+_pred.jpg` shows validation batch predictions:
